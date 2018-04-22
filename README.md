@@ -1,11 +1,46 @@
 # cuteprint
 A Pretty Print Utils Library
 
+<style type="text/css">
+	img.screenshot {
+		width:85%; 
+		display: block; 
+		box-shadow: 1px 1px 7px #555; 
+		border-radius: 5px; 
+		margin : 2.5em auto 2.5em auto; 
+	}
+</style>
+
 ## Example Usage
 
+### Directory Structure
+```
+├── cuteprint-example
+│   ├── cuteprint
+│   │   ├── LICENSE.txt
+│   │   ├── README.md
+│   │   ├── __init__.py
+│   │   ├── cuteprint.py
+│   │   ├── demo
+│   │   │   ├── cuteprint-demo.gif
+│   │   │   └── example.py
+│   │   ├── setup.cfg
+│   │   └── setup.py
+│   └── example.py
+```
+
+### example.py
 ```python
 
-from cuteprint import PrettyPrinter
+from cuteprint.cuteprint import PrettyPrinter
+import time
+import threading    
+
+
+def threadedExample(site, duration):
+    t = p.start_progress(task="Preparing image upload for site {}...".format(site), enable_dots=False)
+    time.sleep(duration)
+    p.stop_progress(loading_thread=t)
 
 # PrettyPrinter Init
 p = PrettyPrinter()
@@ -32,3 +67,7 @@ t2 = threading.Thread(target=threadedExample, args=("thread2.com", 5))
 t1.start()
 t2.start()
 ```
+
+### Output
+
+<img class="screenshot" src="https://github.com/terryvogelsang/cuteprint/raw/master/demo/cuteprint-demo.gif" alt="Cuteprint Demo">
