@@ -52,8 +52,13 @@ class PrettyPrinter :
     def print_question(self, s, end='\n', replace_line=False):
         self.custom_print(string=s, color=self.white, symbol='[?]', replace_line=replace_line, end=end)
 
-    def print_separator(self, len, separator='.', end='\n'):
-        print(separator*len+end)
+    def print_separator(self, length=150, suffix=None, separator='.', end='\n'):
+
+        if suffix != None:
+            final_len = length-len(suffix)-1
+            print("{} {}".format(suffix, separator*final_len+end))
+        else:
+            print(separator*length+end)
 
     def print_title(self, title, top='=', bottom='=', left='>', right='<', caps=True):
         print('\n')
@@ -62,8 +67,10 @@ class PrettyPrinter :
             print(self.white("{} {} {} ".format(left,title.upper(),right)))
         else:
             print(self.white("{} {} {} ".format(left,title,right)))
-        print(self.white(bottom*(len(title)+4))+'\n')
-    
+        print(self.white(bottom*(len(title)+4))+'\n\n')
+
+    def print_blank(self):
+        print('\n')
     
     # Progress Dotted-Bar Functions 
     
@@ -100,14 +107,14 @@ if __name__ == '__main__':
     p.print_bad("This is Bad")
     p.print_info("This is an Information")
     p.print_question("Is this a Question ?")
-    p.print_separator(len=100,separator="~")
+    p.print_separator(length=100,separator="~")
     
     # Simple Loading Progress Bar Example
     p.print_title("Simple Loading Progress Bar Demo")
     t = p.start_progress(task="Loading templates ...")
     time.sleep(6)
     p.stop_progress(t)
-    p.print_separator(len=100,separator="~")
+    p.print_separator(length=100,separator="~")
 
     # Threaded Loading Examples (enable_dots set to False for better output)
     p.print_title("Threaded Loading Demo")
