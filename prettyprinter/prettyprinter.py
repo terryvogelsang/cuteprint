@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # encoding: utf-8
+# This script is compatible with both Python 2 and 3
 
 import sys
 import threading
 import time
-
 
 class PrettyPrinter :
 
