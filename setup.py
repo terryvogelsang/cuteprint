@@ -7,7 +7,7 @@ setup(
   author = 'Terry Vogelsang',
   author_email = 'terry.vogelsang@protonmail.com',
   url = 'https://github.com/terryvogelsang/prettyprinter', # use the URL to the github repo
-  download_url = 'https://github.com/peterldowns/mypackage/archive/0.1.tar.gz', # I'll explain this in a second
-  keywords = ['testing', 'logging', 'example'], # arbitrary keywords
+  download_url = 'https://github.com/terryvogelsang/prettyprinter/archive/0.1.tar.gz', # I'll explain this in a second
+  keywords = ['pretty', 'print'], # arbitrary keywords
   classifiers = [],
 )
