@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'cuteprint',
   packages = ['cuteprint'], # This must be the same as the name above
-  version = '0.1',
+  version = '0.2',
   description = 'A Pretty Print Utils Library',
   long_description = 'A Pretty Print Utils Library',
   author = 'Terry Vogelsang',
