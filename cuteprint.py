@@ -28,7 +28,7 @@ class PrettyPrinter :
     
     # Pretty-Print Contextual Functions 
 
-    def custom_print(self, string, color, symbol, end,  elapsed_time=None, replace_line=False):
+    def custom_print(self, string, color, symbol, end, elapsed_time=None, replace_line=False):
         
         if elapsed_time:
             to_print = '{} {} {} {}'.format(color(symbol), str(string), 'in {} seconds'.format(elapsed_time), end)
@@ -47,13 +47,13 @@ class PrettyPrinter :
         self.custom_print(string=s, color=self.red, symbol='[-]', replace_line=replace_line, end=end)
 
     def print_info(self, s, end='\n', replace_line=False, elapsed_time=None):
-        self.custom_print(string=s, color=self.blue, symbol='[!]', replace_line=replace_line, end=end, elapsed_time=elapsed_time)
+        self.custom_print(string=s, color=self.blue, symbol='[!]', replace_line=replace_line, elapsed_time=elapsed_time, end=end)
 
     def print_question(self, s, end='\n', replace_line=False):
         self.custom_print(string=s, color=self.white, symbol='[?]', replace_line=replace_line, end=end)
 
-    def print_separator(self, len, separator='.'):
-        print(separator*len+'\n')
+    def print_separator(self, len, separator='.', end='\n'):
+        print(separator*len+end)
 
     def print_title(self, title, top='=', bottom='=', left='>', right='<', caps=True):
         print('\n')
@@ -77,7 +77,7 @@ class PrettyPrinter :
                 sys.stdout.write(s)
                 sys.stdout.flush()
                 time.sleep(1)
-        self.print_info("{} : Done".format(task), replace_line=True, elapsed_time=(time.time() - start_time))
+        self.print_info("Task << {} >> : Done".format(task), replace_line=True, elapsed_time=(time.time() - start_time), end="\n")
 
     def start_progress(self, task, enable_dots=True, char='.'):
         t = threading.Thread(target=self.progress, args=(task,enable_dots,char))
