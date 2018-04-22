@@ -40,14 +40,14 @@ class PrettyPrinter :
 
         print(to_print)
 
-    def print_good(self, s, end='\n', replace_line=False, elapsed_time=None):
-        self.custom_print(string=s, color=self.green, symbol='[+]', replace_line=replace_line, end=end, elapsed_time=elapsed_time)
+    def print_good(self, s, end='\n', replace_line=False):
+        self.custom_print(string=s, color=self.green, symbol='[+]', replace_line=replace_line, end=end)
 
     def print_bad(self, s, end='\n', replace_line=False):
         self.custom_print(string=s, color=self.red, symbol='[-]', replace_line=replace_line, end=end)
 
-    def print_info(self, s, end='\n', replace_line=False):
-        self.custom_print(string=s, color=self.blue, symbol='[!]', replace_line=replace_line, end=end)
+    def print_info(self, s, end='\n', replace_line=False, elapsed_time=None):
+        self.custom_print(string=s, color=self.blue, symbol='[!]', replace_line=replace_line, end=end, elapsed_time=elapsed_time)
 
     def print_question(self, s, end='\n', replace_line=False):
         self.custom_print(string=s, color=self.white, symbol='[?]', replace_line=replace_line, end=end)
@@ -77,7 +77,7 @@ class PrettyPrinter :
                 sys.stdout.write(s)
                 sys.stdout.flush()
                 time.sleep(1)
-        self.print_good("{} : Done".format(task), replace_line=True, elapsed_time=(time.time() - start_time))
+        self.print_info("{} : Done".format(task), replace_line=True, elapsed_time=(time.time() - start_time))
 
     def start_progress(self, task, enable_dots=True, char='.'):
         t = threading.Thread(target=self.progress, args=(task,enable_dots,char))
