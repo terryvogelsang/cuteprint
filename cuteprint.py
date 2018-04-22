@@ -88,12 +88,6 @@ class PrettyPrinter :
     def stop_progress(self, loading_thread):
         loading_thread.load = False
         loading_thread.join()
-
-
-def threadedExample(site, duration):
-    t = p.start_progress(task="Preparing image upload for site {}...".format(site), enable_dots=False)
-    time.sleep(duration)
-    p.stop_progress(loading_thread=t)
     
 if __name__ == '__main__':
 
