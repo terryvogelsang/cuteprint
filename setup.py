@@ -4,6 +4,7 @@ setup(
   packages = ['prettyprinter'], # This must be the same as the name above
   version = '0.1',
   description = 'A Pretty Print Utils Library',
+  long_description = 'A Pretty Print Utils Library',
   author = 'Terry Vogelsang',
   author_email = 'terry.vogelsang@protonmail.com',
   url = 'https://github.com/terryvogelsang/prettyprinter',
