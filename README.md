@@ -1,16 +1,6 @@
 # cuteprint
 A Pretty Print Utils Library
 
-<style type="text/css">
-	img.screenshot {
-		width:85%; 
-		display: block; 
-		box-shadow: 1px 1px 7px #555; 
-		border-radius: 5px; 
-		margin : 2.5em auto 2.5em auto; 
-	}
-</style>
-
 ## Example Usage
 
 ### Directory Structure
@@ -70,4 +60,4 @@ t2.start()
 
 ### Output
 
-<img class="screenshot" src="https://github.com/terryvogelsang/cuteprint/raw/master/demo/cuteprint-demo.gif" alt="Cuteprint Demo">
+![Cuteprint Demo](https://github.com/terryvogelsang/cuteprint/raw/master/demo/cuteprint-demo.gif)
