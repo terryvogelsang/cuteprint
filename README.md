@@ -1,9 +1,12 @@
-# prettyprinter
+# cuteprint
 A Pretty Print Utils Library
 
 ## Example Usage
 
 ```python
+
+from cuteprint import PrettyPrinter
+
 # PrettyPrinter Init
 p = PrettyPrinter()
 
